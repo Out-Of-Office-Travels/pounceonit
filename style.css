@@ -1,0 +1,95 @@
+/* Pounce On It — site styles. Self-hosted fonts, no third-party requests. */
+@font-face {
+  font-family: 'Overpass';
+  src: url('assets/overpass.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Overpass Mono';
+  src: url('assets/overpass-mono.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --board: #111d28;
+  --board-hi: #182431;
+  --concourse: #edefea;
+  --surface: #f7f8f5;
+  --ink: #16283c;
+  --dim: #5f6b76;
+  --signal: #ffb224;
+  --line: #d8dbd3;
+  --font-ui: 'Overpass', system-ui, sans-serif;
+  --font-mono: 'Overpass Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--concourse);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ink); text-decoration-color: var(--signal); text-underline-offset: 2px; }
+a:hover { text-decoration-color: var(--ink); }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 64px; }
+
+header.hero {
+  background: var(--board);
+  background-image: radial-gradient(120% 140% at 18% 20%, var(--board-hi) 0%, var(--board) 62%);
+  color: #f3f1ea;
+  padding: 40px 0 36px;
+  margin-bottom: 40px;
+}
+header.hero .wrap { padding-bottom: 0; }
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px rgba(237,239,234,.10); }
+.brand h1 { margin: 0; font-size: 34px; font-weight: 800; letter-spacing: .4px; line-height: 1.05; }
+.brand h1 em { font-style: normal; color: var(--signal); }
+.brand .by { margin: 4px 0 0; color: #9fb0c2; font-size: 14px; }
+.tagline { margin: 20px 0 0; color: #c9d3dd; font-size: 17px; max-width: 52ch; }
+.route {
+  margin-top: 22px; font-family: var(--font-mono); font-size: 13px;
+  letter-spacing: 3px; color: #edefea;
+}
+
+h2 { font-size: 22px; margin: 36px 0 8px; letter-spacing: .2px; }
+h3 { font-size: 16px; margin: 26px 0 4px; }
+p, li { color: var(--ink); }
+.lede { font-size: 17px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+
+.points { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0; }
+.points .card { margin: 0; }
+.points h3 { margin-top: 0; }
+.points p { margin: 4px 0 0; color: var(--dim); font-size: 14px; }
+
+.mono { font-family: var(--font-mono); }
+.small { font-size: 13px; color: var(--dim); }
+.amber { color: #8a5a00; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--dim); }
+footer a { color: var(--dim); }
+
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+
+@media (max-width: 520px) {
+  .brand h1 { font-size: 26px; }
+  header.hero { padding: 30px 0 28px; }
+}
