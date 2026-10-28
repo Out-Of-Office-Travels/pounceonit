@@ -60,6 +60,16 @@ header.hero .wrap { padding-bottom: 0; }
   letter-spacing: 3px; color: #edefea;
 }
 
+.cta {
+  display: inline-flex; align-items: center; gap: 9px;
+  margin-top: 24px; padding: 12px 20px; border-radius: 8px;
+  background: #f3f1ea; color: #111d28; font-weight: 700; font-size: 16px;
+  text-decoration: none; border: 1px solid rgba(237, 239, 234, .28);
+  transition: background .15s ease, transform .15s ease;
+}
+.cta:hover { background: #fff; transform: translateY(-1px); }
+.cta .arrow { font-family: var(--font-mono); }
+
 h2 { font-size: 22px; margin: 36px 0 8px; letter-spacing: .2px; }
 h3 { font-size: 16px; margin: 26px 0 4px; }
 p, li { color: var(--ink); }
